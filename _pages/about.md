@@ -12,3 +12,5 @@ I'm an incoming PhD student in Computer Science at Purdue advised by [Prof. Soti
 I was a Master's student in ECE (Machine Learning & Data Science) at UC San Diego, and was co-advised by [Prof. Nick Antipa](https://www.nickantipa.com/) and Dr. Sophia Merrifield. My research was on the rigid 6DoF pose estimation of buried objects in the seabed.
 
 During my undergrad, I majored in Probability and Statistics at UC San Diego, and did oceanographic research with X-Band and HF radar for the [CORDC lab](https://cordc.ucsd.edu/).
+
+This page is still under construction.

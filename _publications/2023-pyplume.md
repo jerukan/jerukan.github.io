@@ -3,11 +3,11 @@ title: "PyPlume: A Toolkit for Rapid Ocean Surface Transport Assessments"
 collection: publications
 category: manuscripts
 permalink: /publication/2023-pyplume
-excerpt: 'Software framework for data processing and ocean particle trajectory simulations.'
+excerpt: "Software framework for data processing and ocean particle trajectory simulations.<br/><img src='/images/simframe_78.png' width=300>"
 date: 2023-10-01
 venue: 'Environmental Modelling & Software'
 paperurl: 'https://www.sciencedirect.com/science/article/pii/S136481522300169X?via%3Dihub'
-bibtexurl: 'http://jerukan.github.io/files/bibtex-2023-pyplume.bib'
+# bibtexurl: 'http://jerukan.github.io/files/bibtex-2023-pyplume.bib'
 citation: '<b>Yan, J.</b>, Cook, T., Ho, A., Otero, M., Rogowski, P. A., Siegelman, M., Terrill, E., & Merrifield, S. (2023). <b>PyPlume: A toolkit for rapid ocean surface transport assessments.</b> <i>Environmental Modelling & Software</i>, 168, 105783.'
 ---
 
