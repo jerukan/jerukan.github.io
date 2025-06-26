@@ -5,7 +5,7 @@ category: manuscripts
 permalink: /publication/2025-6dof-barrel
 excerpt: "Rigid 6DoF pose estimation of arbitrary buried objects in the seafloor from ROV footage using foundation models.<br/><img src='/images/fit-overlays-barrelddt1.gif' width=300>"
 date: 2025-06-12
-venue: 'preprint'
+venue: 'Thesis and Preprint'
 paperurl: 'https://arxiv.org/abs/2506.10386'
 # bibtexurl: 'http://jerukan.github.io/files/bibtex-2025-poseidon.bib'
 citation: '<b>Yan, J.</b>, Talegaonkar, C., Antipa, N., Terrill, E., & Merrifield, S. (2025). <b>Leveraging 6DoF Pose Foundation Models For Mapping Marine Sediment Burial.</b> <i>Preprint</i>.'
