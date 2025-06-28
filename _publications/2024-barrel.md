@@ -6,7 +6,7 @@ permalink: /publication/2024-barrel
 excerpt: "Rigid 6DoF pose estimation of buried barrels in the seafloor from ROV footage.<br/><img src='/images/fit-barrel4.png' width=300>"
 date: 2024-09-23
 venue: 'OCEANS 2024 - Halifax'
-paperurl: 'https://arxiv.org/abs/2506.10386'
+paperurl: 'https://arxiv.org/abs/2410.01061'
 # bibtexurl: 'http://jerukan.github.io/files/bibtex-2024-barrel.bib'
 citation: '<b>Yan, J.</b>, Talegaonkar, C., Antipa, N., Terrill, E., & Merrifield, S. (2024). <b>Pose Estimation of Buried Deep-Sea Objects using 3D Vision Deep Learning Models.</b> <i>OCEANS 2024 - Halifax</i>, 1–6.'
 ---
