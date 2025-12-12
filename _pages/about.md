@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I'm an incoming PhD student in Computer Science at Purdue advised by [Prof. Sotiris Nousias](https://sotirisnousias.com/). I do computer vision things.
+I'm a first year PhD student in Computer Science at Purdue advised by [Prof. Sotiris Nousias](https://sotirisnousias.com/). I do computer vision things.
 
 I was a Master's student in ECE (Machine Learning & Data Science) at UC San Diego, and was co-advised by [Prof. Nick Antipa](https://www.nickantipa.com/) and Dr. Sophia Merrifield. My research was on the rigid 6DoF pose estimation of buried objects in the seabed.
 
