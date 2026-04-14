@@ -9,4 +9,10 @@ redirect_from:
 
 {% include base_path %}
 
-I will redirect this to a PDF or just embed it later.
+<!-- <embed src="/files/cv_jerryyan.pdf" type="application/pdf" width="100%" height="800px" /> -->
+
+<iframe src="/files/cv_jerryyan.pdf" width="100%" height="800px" style="border: none;">
+  <p>Your browser doesn't support embedded PDFs. 
+     <a href="/files/cv_jerryyan.pdf">Find the CV here.</a></p>
+</iframe>
+
