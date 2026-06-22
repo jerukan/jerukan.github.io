@@ -3,7 +3,7 @@ title: "Spatiotemporal Flux Probing for Single-Photon Videography"
 collection: publications
 category: conferences
 # Title in the Publications list links here (the standalone site):
-link: /publications/spt-flux-probing/
+link: /spt-flux-probing/
 # This stub's own page lives at a different path so it does NOT collide
 # with the static site that owns /publications/spt-flux-probing/:
 permalink: /publications/spt-flux-probing-cite
