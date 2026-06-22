@@ -2,7 +2,7 @@
 title: "Pose Estimation of Buried Deep-Sea Objects using 3D Vision Deep Learning Models"
 collection: publications
 category: conferences
-permalink: /publication/2024-barrel
+permalink: /publications/2024-barrel
 excerpt: "Rigid 6DoF pose estimation of buried barrels in the seafloor from ROV footage.<br/><img src='/images/fit-barrel4.png' width=300>"
 date: 2024-09-23
 venue: 'OCEANS 2024 - Halifax'

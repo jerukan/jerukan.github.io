@@ -2,7 +2,7 @@
 title: "Leveraging 6DoF Pose Foundation Models For Mapping Marine Sediment Burial"
 collection: publications
 category: manuscripts
-permalink: /publication/2025-6dof-barrel
+permalink: /publications/2025-6dof-barrel
 excerpt: "Rigid 6DoF pose estimation of arbitrary buried objects in the seafloor from ROV footage using foundation models.<br/><img src='/images/fit-overlays-barrelddt1.gif' width=300>"
 date: 2025-06-12
 venue: 'Thesis and Preprint'

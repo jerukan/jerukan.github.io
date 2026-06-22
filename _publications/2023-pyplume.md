@@ -2,7 +2,7 @@
 title: "PyPlume: A Toolkit for Rapid Ocean Surface Transport Assessments"
 collection: publications
 category: manuscripts
-permalink: /publication/2023-pyplume
+permalink: /publications/2023-pyplume
 excerpt: "Software framework for data processing and ocean particle trajectory simulations.<br/><img src='/images/simframe_78.png' width=300>"
 date: 2023-10-01
 venue: 'Environmental Modelling & Software'
