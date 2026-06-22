@@ -186,6 +186,8 @@ exclude:
   - README
   - tmp
   - vendor
+  # temporarily exclude before final version
+  - spt-flux-probing
 keep_files:
   - .git
   - .svn

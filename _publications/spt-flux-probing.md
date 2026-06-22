@@ -1,4 +1,4 @@
----
+<!-- ---
 title: "Spatiotemporal Flux Probing for Single-Photon Videography"
 collection: publications
 category: conferences
@@ -15,4 +15,4 @@ venue: 'ECCV'
 # citation: '<b>Yan, J.</b>, et al. (2025). <b>TITLE.</b> <i>Venue</i>.'
 ---
 
-ABSTRACT / SUMMARY TEXT HERE.
+ABSTRACT / SUMMARY TEXT HERE. -->
