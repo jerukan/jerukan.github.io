@@ -1,0 +1,59 @@
+<script>
+(function () {
+  // Author records (from _data/authors.yml) keyed by name; `uri` is the
+  // personal-site link. The site owner's name is bolded wherever it appears.
+  var authors = {{ site.data.authors | jsonify }};
+  var owner = {{ site.author.name | jsonify }};
+
+  // Turn a BibTeX name ("Yan, Jerry" or "Jerry Yan") into "Jerry Yan".
+  function formatName(raw) {
+    raw = raw.replace(/[{}]/g, '').trim();
+    var comma = raw.indexOf(',');
+    if (comma !== -1) {
+      return (raw.slice(comma + 1).trim() + ' ' + raw.slice(0, comma).trim()).trim();
+    }
+    return raw;
+  }
+
+  // Pull the author field out of a BibTeX entry and split into names.
+  function parseAuthors(bibtex) {
+    var m = bibtex.match(/author\s*=\s*[{"]([\s\S]*?)[}"]\s*,?\s*$/im);
+    if (!m) { return []; }
+    return m[1].split(/\s+and\s+/).map(formatName).filter(Boolean);
+  }
+
+  function render(container, names) {
+    container.textContent = '';
+    names.forEach(function (name, i) {
+      var node;
+      if (name === owner) {
+        // The site owner's own name: bold, solid text, never a link.
+        node = document.createElement('strong');
+        node.className = 'pub-item__me';
+        node.textContent = name;
+      } else {
+        var url = authors[name] && authors[name].uri;
+        if (url) {
+          node = document.createElement('a');
+          node.href = url;
+        } else {
+          node = document.createElement('span');
+        }
+        node.textContent = name;
+      }
+      container.appendChild(node);
+      if (i < names.length - 1) {
+        container.appendChild(document.createTextNode(', '));
+      }
+    });
+  }
+
+  var containers = document.querySelectorAll('.pub-item__authors[data-bibtex-url]');
+  Array.prototype.forEach.call(containers, function (c) {
+    fetch(c.getAttribute('data-bibtex-url'))
+      .then(function (r) { return r.text(); })
+      .then(function (t) { render(c, parseAuthors(t)); })
+      .catch(function () {});
+  });
+})();
+</script>

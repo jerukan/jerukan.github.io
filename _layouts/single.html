@@ -45,32 +45,52 @@ layout: default
       {% endunless %}
 
       <section class="page__content" itemprop="text">
+        {% if page.collection == 'publications' and page.image %}
+          <img class="pub-single__image" src="{% if page.image contains '://' %}{{ page.image }}{% else %}{{ page.image | prepend: base_path }}{% endif %}" alt="{{ page.title | strip_html }}">
+        {% endif %}
+
         {{ content }}
 
-        {% if page.citation and page.paperurl and page.slidesurl and page.bibtexurl %}
-          <p style="font-size: smaller">Citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation and page.paperurl and page.slidesurl %}
-          <p style="font-size: smaller">Citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.citation and page.paperurl and page.bibtexurl %}
-          <p style="font-size: smaller">Citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation and page.paperurl %}
-          <p style="font-size: smaller">Citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a></p>
-        {% elsif page.citation and page.slidesurl and page.bibtexurl %}
-          <p style="font-size: smaller">Citation: {{ page.citation }}<br /><a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation and page.slidesurl %}
-          <p style="font-size: smaller">Citation: {{ page.citation }}<br /><a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.slidesurl and page.bibtexurl %}
-          <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.paperurl and page.bibtexurl %}
-          <p style="font-size: smaller"><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation and page.bibtexurl %}
-          <p style="font-size: smaller">Citation: {{ page.citation }}<br /><a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation %}
-          <p style="font-size: smaller">Citation: {{ page.citation }}</p>
-        {% elsif page.slidesurl %}
-          <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.bibtexurl %}
-          <p style="font-size: smaller"><a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
+        {% if page.collection == 'publications' %}
+          <div class="pub-single__meta">
+            {% if page.paperurl %}
+              <p><a href="{{ page.paperurl }}" class="btn btn--paper">paper</a></p>
+            {% endif %}
+
+            {% if page.bibtexurl %}
+              <div class="bibtex" data-bibtex-url="{{ page.bibtexurl | prepend: site.baseurl }}">
+                <div class="bibtex__header">
+                  <span class="bibtex__label">BibTeX</span>
+                  <button type="button" class="btn btn--small bibtex__copy">Copy</button>
+                </div>
+                <pre class="bibtex__code"><code>Loading&hellip;</code></pre>
+              </div>
+              <script>
+              (function () {
+                var block = document.querySelector('.bibtex');
+                if (!block) { return; }
+                var url = block.getAttribute('data-bibtex-url');
+                var codeEl = block.querySelector('code');
+                var btn = block.querySelector('.bibtex__copy');
+                var text = '';
+                fetch(url).then(function (r) { return r.text(); }).then(function (t) {
+                  text = t.trim();
+                  codeEl.textContent = text;
+                }).catch(function () {
+                  codeEl.textContent = 'Unable to load BibTeX.';
+                });
+                btn.addEventListener('click', function () {
+                  if (!text) { return; }
+                  navigator.clipboard.writeText(text).then(function () {
+                    var orig = btn.textContent;
+                    btn.textContent = 'Copied!';
+                    setTimeout(function () { btn.textContent = orig; }, 1500);
+                  });
+                });
+              })();
+              </script>
+            {% endif %}
+          </div>
         {% endif %}
 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}

@@ -1,0 +1,188 @@
+/* ==========================================================================
+   Publications list + single publication page
+   ========================================================================== */
+
+$pub-image-width: 200px;
+
+/* --- Publications list --------------------------------------------------- */
+
+$pub-highlight-accent: #f89406;
+$pub-highlight-bg: rgba(248, 148, 6, 0.14);
+
+.pub-list {
+  margin-top: 1em;
+}
+
+/* Legend explaining the highlight color */
+.pub-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 1em 0;
+  font-size: 0.9em;
+  color: var(--global-text-color-light);
+}
+
+.pub-legend__swatch {
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  border-radius: 3px;
+  background-color: $pub-highlight-bg;
+  border-left: 4px solid $pub-highlight-accent;
+}
+
+.pub-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25em;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: $border-radius;
+  font-size: 0.8em;
+
+  @include breakpoint(max-width $small) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75em;
+  }
+}
+
+/* Representative / highlighted work */
+.pub-item--highlight {
+  background-color: $pub-highlight-bg;
+  border-left: 4px solid $pub-highlight-accent;
+}
+
+.pub-item__image {
+  flex: 0 0 $pub-image-width;
+  width: $pub-image-width;
+  max-width: 100%;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: $border-radius;
+  }
+}
+
+.pub-item__body {
+  flex: 1 1 0%;
+  min-width: 0;
+
+  /* These selectors are scoped under .pub-item__body so they out-specify the
+     theme's `.page__content p { margin: 0 0 1.3em }`, which otherwise sets the
+     vertical gaps between these rows. */
+  .pub-item__title {
+    margin: 0 0 0.15em;
+    font-size: 1.15em;
+  }
+
+  .pub-item__authors {
+    margin: 0 0 0.25em;
+    font-size: 0.95em;
+    color: var(--global-text-color-light);
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .pub-item__venue {
+    margin: 0 0 0.3em;
+    color: var(--global-text-color-light);
+  }
+
+  .pub-item__links {
+    margin: 0 0 0.3em;
+  }
+
+  .pub-item__excerpt {
+    margin: 0;
+  }
+}
+
+/* The site owner's own name: solid (full-strength) text, bold, no link. */
+.pub-item__me {
+  color: var(--global-text-color);
+  font-weight: bold;
+}
+
+/* Paper button: light background with black text so it stays legible
+   on both the light and dark site themes. */
+.btn--paper {
+  color: #000 !important;
+  background-color: #f2f3f3;
+  border: 1px solid #bdc1c4 !important;
+
+  &:hover {
+    color: #000 !important;
+    background-color: #fff;
+    border-color: #9ba1a6 !important;
+  }
+}
+
+/* --- Single publication page --------------------------------------------- */
+
+.pub-single__image {
+  float: left;
+  width: $pub-image-width;
+  max-width: 45%;
+  height: auto;
+  margin: 0.25em 1.5em 1em 0;
+  border-radius: $border-radius;
+
+  @include breakpoint(max-width $small) {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1em;
+  }
+}
+
+.pub-single__meta {
+  clear: both;
+  margin-top: 1.5em;
+}
+
+/* The BibTeX field is always rendered as a light card with dark text so it
+   reads consistently in both the light and dark site themes. */
+.bibtex {
+  margin-top: 1em;
+  border: 1px solid #bdc1c4;
+  border-radius: $border-radius;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+
+.bibtex__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4em 0.75em;
+  background-color: #eaebec;
+  border-bottom: 1px solid #bdc1c4;
+}
+
+.bibtex__label {
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  color: #000;
+}
+
+.bibtex__code {
+  margin: 0;
+  padding: 0.75em;
+  overflow-x: auto;
+  font-size: 0.8em;
+  background-color: #fafafa;
+  color: #1a1a1a;
+
+  code {
+    white-space: pre;
+    color: #1a1a1a;
+    background: transparent;
+  }
+}

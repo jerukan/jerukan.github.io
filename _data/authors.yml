@@ -1,4 +1,42 @@
 # Authors
+#
+# The publications list links each author name to their `uri` (personal site).
+# List an author here once and the link applies everywhere the name appears.
+
+Jerry Yan:
+  name        : "Jerry Yan"
+
+Nicholas Antipa:
+  name        : "Nicholas Antipa"
+  uri         : "https://www.nickantipa.com/"
+
+Sophia Merrifield:
+  name        : "Sophia Merrifield"
+  uri         : "https://cordc.ucsd.edu/people/sophia-merrifield/"
+
+Eric Terrill:
+  name        : "Eric Terrill"
+  uri         : "https://cordc.ucsd.edu/people/eric-terrill/"
+
+Chinmay Talegaonkar:
+  name        : "Chinmay Talegaonkar"
+  uri         : "https://chinmay0301.github.io/"
+
+Mark Otero:
+  name        : "Mark Otero"
+  uri         : "https://cordc.ucsd.edu/people/mark-otero/"
+
+Peter A. Rogowski:
+  name        : "Peter A. Rogowski"
+  uri         : "https://cordc.ucsd.edu/people/peter-rogowski/"
+
+Allison Ho:
+  name        : "Allison Ho"
+  uri         : "https://science.jpl.nasa.gov/people/ajho/"
+
+Mika Siegelman:
+  name        : "Mika Siegelman"
+  uri         : "https://siocpg.ucsd.edu/team/mika-siegelman/"
 
 Name Name:
   name        : "Name Name"

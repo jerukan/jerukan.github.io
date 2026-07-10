@@ -1,0 +1,39 @@
+{% include base_path %}
+
+{% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+
+<div class="pub-item{% if post.highlight %} pub-item--highlight{% endif %}">
+
+  {% if post.image %}
+    <div class="pub-item__image">
+      <a href="{{ base_path }}{{ post.url }}">
+        <img src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ post.image | prepend: base_path }}{% endif %}" alt="{{ title | strip_html }}">
+      </a>
+    </div>
+  {% endif %}
+
+  <div class="pub-item__body">
+    <h2 class="pub-item__title" itemprop="headline">
+      {% if post.link %}
+        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+      {% else %}
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+      {% endif %}
+    </h2>
+
+    {% if post.bibtexurl %}
+      <p class="pub-item__authors" data-bibtex-url="{{ post.bibtexurl | prepend: site.baseurl }}"></p>
+    {% endif %}
+
+    <p class="pub-item__venue"><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+
+    {% if post.paperurl %}
+      <p class="pub-item__links"><a href="{{ post.paperurl }}" class="btn btn--small btn--paper">paper</a></p>
+    {% endif %}
+
+    {% if post.excerpt %}
+      <p class="pub-item__excerpt" itemprop="description">{{ post.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+    {% endif %}
+  </div>
+
+</div>
