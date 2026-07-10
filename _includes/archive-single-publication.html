@@ -22,7 +22,7 @@
     </h2>
 
     {% if post.bibtexurl %}
-      <p class="pub-item__authors" data-bibtex-url="{{ post.bibtexurl | prepend: site.baseurl }}"></p>
+      <p class="pub-item__authors js-pub-authors" data-bibtex-url="{{ post.bibtexurl | prepend: site.baseurl }}"></p>
     {% endif %}
 
     <p class="pub-item__venue"><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>

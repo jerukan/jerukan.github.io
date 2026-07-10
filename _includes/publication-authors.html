@@ -48,12 +48,20 @@
     });
   }
 
-  var containers = document.querySelectorAll('.pub-item__authors[data-bibtex-url]');
-  Array.prototype.forEach.call(containers, function (c) {
-    fetch(c.getAttribute('data-bibtex-url'))
-      .then(function (r) { return r.text(); })
-      .then(function (t) { render(c, parseAuthors(t)); })
-      .catch(function () {});
-  });
+  function run() {
+    var containers = document.querySelectorAll('.js-pub-authors[data-bibtex-url]');
+    Array.prototype.forEach.call(containers, function (c) {
+      fetch(c.getAttribute('data-bibtex-url'))
+        .then(function (r) { return r.text(); })
+        .then(function (t) { render(c, parseAuthors(t)); })
+        .catch(function () {});
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
 })();
 </script>

@@ -125,6 +125,15 @@ $pub-highlight-bg: rgba(248, 148, 6, 0.14);
 
 /* --- Single publication page --------------------------------------------- */
 
+.pub-single__authors {
+  margin: 0.25em 0 0.5em;
+  color: var(--global-text-color-light);
+
+  &:empty {
+    display: none;
+  }
+}
+
 .pub-single__image {
   float: left;
   width: $pub-image-width;
