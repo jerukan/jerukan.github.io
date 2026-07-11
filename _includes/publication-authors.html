@@ -1,11 +1,14 @@
 <script>
+/* NOTE: this page is served through the `compress` layout, which strips all
+   newlines. Use only block comments here -- `//` line comments would comment
+   out the rest of the (single-line) script and break it. */
 (function () {
-  // Author records (from _data/authors.yml) keyed by name; `uri` is the
-  // personal-site link. The site owner's name is bolded wherever it appears.
+  /* Author records (from _data/authors.yml) keyed by name; `uri` is the
+     personal-site link. The site owner's name is bolded wherever it appears. */
   var authors = {{ site.data.authors | jsonify }};
   var owner = {{ site.author.name | jsonify }};
 
-  // Turn a BibTeX name ("Yan, Jerry" or "Jerry Yan") into "Jerry Yan".
+  /* Turn a BibTeX name ("Yan, Jerry" or "Jerry Yan") into "Jerry Yan". */
   function formatName(raw) {
     raw = raw.replace(/[{}]/g, '').trim();
     var comma = raw.indexOf(',');
@@ -15,7 +18,7 @@
     return raw;
   }
 
-  // Pull the author field out of a BibTeX entry and split into names.
+  /* Pull the author field out of a BibTeX entry and split into names. */
   function parseAuthors(bibtex) {
     var m = bibtex.match(/author\s*=\s*[{"]([\s\S]*?)[}"]\s*,?\s*$/im);
     if (!m) { return []; }
@@ -27,7 +30,7 @@
     names.forEach(function (name, i) {
       var node;
       if (name === owner) {
-        // The site owner's own name: bold, solid text, never a link.
+        /* The site owner's own name: bold, solid text, never a link. */
         node = document.createElement('strong');
         node.className = 'pub-item__me';
         node.textContent = name;
