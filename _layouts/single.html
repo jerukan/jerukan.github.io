@@ -28,7 +28,7 @@ layout: default
         <header>
           {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
           {% if page.collection == 'publications' and page.bibtexurl %}
-            <p class="pub-single__authors js-pub-authors" data-bibtex-url="{{ page.bibtexurl | prepend: site.baseurl }}"></p>
+            <p class="pub-single__authors js-pub-authors" data-bibtex-url="{{ page.bibtexurl | prepend: site.baseurl }}"{% if page.asterisk_authors %} data-asterisk-authors="{{ page.asterisk_authors | jsonify | escape }}"{% endif %}{% if page.asterisk_note %} data-asterisk-note="{{ page.asterisk_note | escape }}"{% endif %}></p>
           {% endif %}
           {% if page.read_time %}
             <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
@@ -56,8 +56,11 @@ layout: default
 
         {% if page.collection == 'publications' %}
           <div class="pub-single__meta">
-            {% if page.paperurl %}
-              <p><a href="{{ page.paperurl }}" class="btn btn--paper">paper</a></p>
+            {% if page.paperurl or page.codeurl %}
+              <p>
+                {% if page.paperurl %}<a href="{{ page.paperurl }}" class="btn btn--paper">paper</a>{% endif %}
+                {% if page.codeurl %}<a href="{{ page.codeurl }}" class="btn btn--paper">code</a>{% endif %}
+              </p>
             {% endif %}
 
             {% if page.bibtexurl %}

@@ -25,8 +25,17 @@
     return m[1].split(/\s+and\s+/).map(formatName).filter(Boolean);
   }
 
-  function render(container, names) {
+  /* Normalize a name for comparison against the asterisk list. */
+  function normName(s) {
+    return s.replace(/\s+/g, ' ').trim().toLowerCase();
+  }
+
+  function render(container, names, asteriskNames, note) {
     container.textContent = '';
+
+    var starred = {};
+    (asteriskNames || []).forEach(function (n) { starred[normName(n)] = true; });
+
     names.forEach(function (name, i) {
       var node;
       if (name === owner) {
@@ -45,18 +54,37 @@
         node.textContent = name;
       }
       container.appendChild(node);
+      if (starred[normName(name)]) {
+        var sup = document.createElement('sup');
+        sup.className = 'pub-author-asterisk';
+        sup.textContent = '*';
+        container.appendChild(sup);
+      }
       if (i < names.length - 1) {
         container.appendChild(document.createTextNode(', '));
       }
     });
+
+    /* The asterisk legend, placed directly under the author list. */
+    if (note) {
+      var noteEl = document.createElement('p');
+      noteEl.className = 'pub-authors-note';
+      noteEl.textContent = '* ' + note;
+      container.insertAdjacentElement('afterend', noteEl);
+    }
   }
 
   function run() {
     var containers = document.querySelectorAll('.js-pub-authors[data-bibtex-url]');
     Array.prototype.forEach.call(containers, function (c) {
+      var asteriskNames = [];
+      try {
+        asteriskNames = JSON.parse(c.getAttribute('data-asterisk-authors') || '[]');
+      } catch (e) { asteriskNames = []; }
+      var note = c.getAttribute('data-asterisk-note') || '';
       fetch(c.getAttribute('data-bibtex-url'))
         .then(function (r) { return r.text(); })
-        .then(function (t) { render(c, parseAuthors(t)); })
+        .then(function (t) { render(c, parseAuthors(t), asteriskNames, note); })
         .catch(function () {});
     });
   }

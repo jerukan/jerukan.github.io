@@ -7,6 +7,7 @@ excerpt: "Software framework for data processing and ocean particle trajectory s
 date: 2023-10-01
 venue: 'Environmental Modelling & Software'
 paperurl: 'https://www.sciencedirect.com/science/article/pii/S136481522300169X'
+codeurl: 'https://github.com/jerukan/PyPlume'
 image: '/images/simframe_78.png'
 highlight: false
 bibtexurl: '/files/bibtex/bibtex-2023-pyplume.bib'

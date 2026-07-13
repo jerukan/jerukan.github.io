@@ -22,13 +22,16 @@
     </h2>
 
     {% if post.bibtexurl %}
-      <p class="pub-item__authors js-pub-authors" data-bibtex-url="{{ post.bibtexurl | prepend: site.baseurl }}"></p>
+      <p class="pub-item__authors js-pub-authors" data-bibtex-url="{{ post.bibtexurl | prepend: site.baseurl }}"{% if post.asterisk_authors %} data-asterisk-authors="{{ post.asterisk_authors | jsonify | escape }}"{% endif %}{% if post.asterisk_note %} data-asterisk-note="{{ post.asterisk_note | escape }}"{% endif %}></p>
     {% endif %}
 
     <p class="pub-item__venue"><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
 
-    {% if post.paperurl %}
-      <p class="pub-item__links"><a href="{{ post.paperurl }}" class="btn btn--small btn--paper">paper</a></p>
+    {% if post.paperurl or post.codeurl %}
+      <p class="pub-item__links">
+        {% if post.paperurl %}<a href="{{ post.paperurl }}" class="btn btn--small btn--paper">paper</a>{% endif %}
+        {% if post.codeurl %}<a href="{{ post.codeurl }}" class="btn btn--small btn--paper">code</a>{% endif %}
+      </p>
     {% endif %}
 
     {% if post.excerpt %}

@@ -7,6 +7,7 @@ excerpt: "Rigid 6DoF pose estimation of arbitrary buried objects in the seafloor
 date: 2026-09-01
 venue: 'ISPRS Journal of Photogrammetry and Remote Sensing + MS Thesis'
 paperurl: 'https://www.sciencedirect.com/science/article/pii/S0924271626003382'
+codeurl: 'https://github.com/jerukan/PoseIDON'
 image: '/images/fit-overlays-barrelddt1.gif'
 highlight: true
 bibtexurl: '/files/bibtex/bibtex-2025-poseidon.bib'

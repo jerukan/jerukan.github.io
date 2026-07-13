@@ -13,7 +13,11 @@ venue: 'ECCV'
 image: null
 paperurl: null
 highlight: true
-bibtexurl: null
+bibtexurl: '/files/bibtex/bibtex-2026-sptfluxprobing.bib'
+asterisk_authors:
+  - Jerry Yan
+  - Matteo Forlivesi
+asterisk_note: "Equal contribution"
 ---
 
 ABSTRACT / SUMMARY TEXT HERE.

@@ -65,6 +65,13 @@ $pub-highlight-bg: rgba(248, 148, 6, 0.14);
     height: auto;
     border-radius: $border-radius;
   }
+
+  /* In the stacked layout the flex direction is column, so flex-basis would
+     otherwise fix the image box's *height* to $pub-image-width and leave a gap
+     below shorter images. Reset it so the box hugs the image height. */
+  @include breakpoint(max-width $small) {
+    flex: 0 0 auto;
+  }
 }
 
 .pub-item__body {
@@ -89,6 +96,11 @@ $pub-highlight-bg: rgba(248, 148, 6, 0.14);
     }
   }
 
+  /* Scoped so it out-specifies the theme's `.page__content p` margin. */
+  .pub-authors-note {
+    margin: 0 0 0.3em;
+  }
+
   .pub-item__venue {
     margin: 0 0 0.3em;
     color: var(--global-text-color-light);
@@ -109,12 +121,24 @@ $pub-highlight-bg: rgba(248, 148, 6, 0.14);
   font-weight: bold;
 }
 
+/* Asterisk marker after flagged authors, and the legend explaining it. */
+.pub-author-asterisk {
+  font-weight: bold;
+}
+
+.pub-authors-note {
+  font-size: 0.85em;
+  font-style: italic;
+  color: var(--global-text-color-light);
+}
+
 /* Paper button: light background with black text so it stays legible
    on both the light and dark site themes. */
 .btn--paper {
   color: #000 !important;
   background-color: #f2f3f3;
   border: 1px solid #bdc1c4 !important;
+  margin-right: 0.4em;
 
   &:hover {
     color: #000 !important;

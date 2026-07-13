@@ -7,6 +7,7 @@ excerpt: "Rigid 6DoF pose estimation of buried barrels in the seafloor from ROV 
 date: 2024-09-23
 venue: 'OCEANS 2024 - Halifax'
 paperurl: 'https://arxiv.org/abs/2410.01061'
+codeurl: # link to code repo; leave empty to hide the "code" button
 image: '/images/fit-barrel4.png'
 highlight: false
 bibtexurl: '/files/bibtex/bibtex-2024-barrel.bib'
