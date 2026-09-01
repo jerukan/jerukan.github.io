@@ -1,1 +1,645 @@
-Spatiotemporal Flux Probing for Single-Photon Videography website coming soon...
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="description" content="Spatiotemporal Flux Probing for Single-Photon Videography">
+  <meta name="keywords" content="High-Speed Imaging, Single-Photon Imaging, Low-Light, Event Cameras, Spike Cameras">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spatiotemporal Flux Probing for Single-Photon Videography</title>
+
+  <link href="./website_files/fonts.css" rel="stylesheet">
+  <link rel="stylesheet" href="./website_files/bulma.min.css">
+  <link rel="stylesheet" href="./website_files/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./website_files/bulma-slider.min.css">
+  <link rel="stylesheet" href="./website_files/academicons.min.css">
+  <link rel="stylesheet" href="./website_files/index.css">
+
+  <script src="./website_files/jquery.min.js"></script>
+  <script defer="" src="./website_files/fontawesome.all.min.js"></script>
+  <script src="./website_files/bulma-carousel.min.js"></script>
+  <script src="./website_files/bulma-slider.min.js"></script>
+  <script src="./website_files/index.js"></script>
+  <script src="./website_files/video_comparison.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+  <!-- ============================ NAV ============================ -->
+  <nav class="navbar site-nav is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container is-max-desktop">
+      <div class="navbar-menu is-active">
+        <div class="navbar-start site-nav-links">
+          <a class="navbar-item" href="#abstract">Abstract</a>
+          <a class="navbar-item" href="#video">Video</a>
+          <a class="navbar-item" href="#theory">Theory</a>
+          <a class="navbar-item" href="#results">Results</a>
+          <a class="navbar-item" href="#modalities">Other Sensors</a>
+          <a class="navbar-item" href="#bibtex">BibTeX</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================ TITLE ============================ -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="is-2 publication-title"><b>Spatiotemporal Flux Probing<br>for Single-Photon Videography</b></h1>
+            <div class="is-size-4 publication-authors">
+              <span class="author-block"><a href="https://jerukan.github.io/">Jerry Yan</a><sup>*1</sup>,</span>
+              <span class="author-block"><a href="https://www.linkedin.com/in/matteo-forlivesi-92a007252/">Matteo Forlivesi</a><sup>*1</sup>,</span>
+              <span class="author-block"><a href="https://www.linkedin.com/in/bowen-tan-669775183/">Bowen Tan</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="https://andrewxie.com/">Andrew Xie</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://sidsoma.com/">Siddharth Somasundaram</a><sup>3</sup>,</span>
+              <span class="author-block"><a href="https://sotirisnousias.com/">Sotiris Nousias</a><sup>1</sup></span>
+            </div>
+            <div class="is-size-5 publication-authors publication-affiliations">
+              <span class="author-block"><sup>1</sup> Purdue University</span>
+              <span class="author-block"><sup>2</sup> University of Toronto</span>
+              <span class="author-block"><sup>3</sup> MIT Media Lab</span>
+            </div>
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>*</sup>Equal contribution</span>
+            </div>
+            <div class="is-size-4 publication-authors publication-venue">
+              <span class="author-block">ECCV 2026</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- <span class="link-block">
+                  <a href="./paper-pdfs/spt-flux-probing-paper-main.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span> -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark is-disabled-link">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper (soon)</span>
+                  </a>
+                </span>
+                <!-- <span class="link-block">
+                  <a href="./paper-pdfs/spt-flux-probing-paper-supp.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Supplementary</span>
+                  </a>
+                </span> -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark is-disabled-link">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Supplementary (soon)</span>
+                  </a>
+                </span>
+                <!-- <span class="link-block">
+                  <a href="https://github.com/purdue-ci-lab/spt-flux-probing" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span> -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark is-disabled-link">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code (soon)</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark is-disabled-link">
+                    <span class="icon"><i class="fas fa-database"></i></span>
+                    <span>Dataset (soon)</span>
+                  </a>
+                </span>
+                <!-- <span class="link-block">
+                  <a href="https://www.dropbox.com/scl/fo/jwm9bcgbc87e8xib4koyd/AIk2M1QYeYToMTx_bqond5A?rlkey=a590dszivimivn9sb0z6zh08s&st=ab7e8w2f&dl=0" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-database"></i></span>
+                    <span>Dataset</span>
+                  </a>
+                </span> -->
+                <span class="link-block">
+                  <a href="https://youtu.be/Bk7LkLDpwV8" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-youtube"></i></span>
+                    <span>Video</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ TEASER ============================ -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="content has-text-centered">
+        <video class="extra-big-centered-video" loop muted controls autoplay playsinline preload="metadata"
+               src="videos_moving/teaser-10k_cropped.mp4"></video>
+      </div>
+      <p class="has-text-centered is-size-5 tagline">
+        We reconstruct high-speed video directly from <b>sparse, asynchronous photon streams</b> &mdash;
+        recovering <b>fast motion</b> and <b>rapid illumination flicker</b> at the same time, from far fewer
+        photons than prior methods.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================ ABSTRACT ============================ -->
+  <section class="section" id="abstract">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Abstract</h2>
+      <div class="content has-text-justified">
+        <p>
+          We address the problem of recovering high-speed videos from dynamic scenes under extreme photon
+          sparsity. Existing methods rely on aggregating photon detections in local spatiotemporal windows to
+          improve signal-to-noise ratio; however, this local grouping discards global structure and fails in
+          low-light regimes where photon detections are sparse in space and time. In this work, we show that the
+          information needed to recover both motion and illumination is encoded in correlations over the full
+          space-time pattern of photon arrivals. Building on this insight, we develop a <b>spatiotemporal flux
+          probing</b> theory and an algorithm that estimates the Fourier coefficients of the underlying intensity
+          directly from the photon stream. We demonstrate that our approach (1) recovers fast motion and temporal
+          illumination dynamics with substantially fewer photons than prior methods, (2) enables
+          <b>velocity-selective videography</b> that automatically refocuses video onto specific detected motions,
+          and (3) generalizes across sensing modalities including single-photon, event, and spike cameras.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ VIDEO ============================ -->
+  <section class="section" id="video">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Video</h2>
+      <figure class="image is-16by9">
+        <iframe class="has-ratio" src="https://www.youtube.com/embed/Bk7LkLDpwV8"
+                title="Spatiotemporal Flux Probing for Single-Photon Videography"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================ THEORY ============================ -->
+  <section class="section" id="theory">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered">Spatiotemporal Flux Probing Theory</h2>
+
+      <!-- ---- Probing ---- -->
+      <h3 class="title is-4">Flux probing from photon arrivals</h3>
+      <div class="content has-text-justified">
+        <video class="float-video float-right" loop muted controls autoplay playsinline preload="metadata"
+               src="videos_moving/PhotonArrivals-crop.mp4"></video>
+        <p>
+          A single-photon camera never observes the spatiotemporal flux $\phi(x, y, t)$ directly; it records only
+          a sparse stream of photon arrivals scattered through the space-time volume. This <b>global
+          pattern of arrivals is highly informative</b>: even
+          when photons are sparse, correlations spanning the full
+          volume still carry the structure of the underlying flux, and can be used to estimate it.
+        </p>
+        <p class="clear-float">
+          To extract that structure, we pick a <b>probing function</b> $p$, a pattern whose resemblance with the
+          unknown flux is quantified by the inner product $\langle p, \phi\rangle$. We can obtain a noisy estimate
+          of this inner product by evaluating $p$ at the detected photon time and positions $\mathbf{x}_1, \dots, \mathbf{x}_N$ and summing:
+        </p>
+        <p class="equation">
+          $$\underbrace{p(\mathbf{x}_1) + \dots + p(\mathbf{x}_N)}_{\substack{\text{probing measurement }\mathcal{E}_p \\ \text{from } N \text{ detected photons}}}
+            =
+            \underbrace{\langle p, \phi\rangle}_{\text{inner product}}
+            +
+            \underbrace{M_P}_{\text{noise}}$$
+        </p>
+        <p>
+          This gives us an approximate noise model: $\mathcal{E}_p \sim \mathcal{N}(\langle p, \phi\rangle, \langle p^2, \phi\rangle)$.
+          <b>Every</b> photon in the volume contributes to this estimate.
+        </p>
+        <p>
+          Our framework admits any bounded probing function; we use the 3D Fourier basis because
+          both spatial motion and illumination flicker form distinct patterns in the spatiotemporal frequency domain.
+          This gives a three-step reconstruction pipeline:
+        </p>
+        <p>
+          This gives a three-step reconstruction pipeline:
+        </p>
+        <ol>
+          <li><b>Scan.</b> Probe the photon stream at every frequency the sensor can resolve.</li>
+          <li><b>Detect.</b> Keep the frequencies whose probing measurements rise above the noise floor.</li>
+          <li><b>Reconstruct.</b> Invert the detected frequencies back into a video, which can then be
+              resampled at any frame rate up to sensor precision after the fact.</li>
+        </ol>
+        <p>
+          We show a simulated stream
+          of photon arrivals containing one frequency (middle plot), where we scan frequencies $\mathbf{f} = (f_x, f_y, f_t)$ (left plot)
+          of the flux $\phi$ and estimate their probing measurements $\mathcal{E}_\mathbf{f}$ (right plot).
+          Using a noise floor (red circle, right plot), we can exclude noisy frequencies.
+        </p>
+      </div>
+
+      <div class="content">
+        <video loop muted controls preload="metadata" src="videos_moving/FluxProbing.mp4"></video>
+      </div>
+
+      <div class="content has-text-justified">
+        <p>
+          We scan every frequency up to the sensor's spatiotemporal precision. Below, frequency's probing
+          energy $|\mathcal{E}_\mathbf{f}|$ is compared against the noise floor.
+          The frequencies that survive accumulate into the running flux reconstruction $\hat{\phi}$ (right).
+        </p>
+      </div>
+
+      <div class="content">
+        <video loop muted controls preload="metadata" src="videos_moving/FluxRecon.mp4"></video>
+      </div>
+
+      <!-- <div class="content has-text-justified">
+        <p>
+          Most notably, we use <b>every</b> photon for flux probing.
+          Prior methods generally group photons locally,
+          either within a pixel (per-pixel probing) or along a motion trajectory (align-and-merge).
+          Local grouping discards valuable structure that survives when
+          photons are scarce, and in the low-light regime these windows may hold too few photons to estimate the
+          flux reliably.
+        </p>
+      </div>
+
+      <figure class="content has-text-centered figure-block is-medium">
+        <img src="figures/unify-alignmerge-compare-figure.jpg"
+             alt="Spatiotemporal support of align-and-merge, per-pixel probing, and our method.">
+      </figure> -->
+
+      <!-- ---- Velocity ---- -->
+      <h3 class="title is-4">Detecting motion in the frequency domain</h3>
+      <div class="content has-text-justified">
+        <p>
+          Within frequency space, an object moving at constant
+          velocity $(v_x, v_y)$ concentrates its energy on a tilted plane $v_x f_x + v_y f_y + f_t = 0$ whose slope is its velocity.
+          Estimating motion therefore reduces to finding those planes &mdash; no optical flow, no correspondence &mdash; and every velocity in the scene is found automatically, straight from the
+          photon stream.
+        </p>
+      </div>
+
+      <figure class="content has-text-centered figure-block">
+        <img src="figures/velocity-planes-example.jpg"
+             alt="Objects moving at different velocities appear as tilted planes in the spatiotemporal frequency domain.">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================ RESULTS ============================ -->
+  <section class="section" id="results">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered">Results</h2>
+      <div class="content has-text-justified">
+        <p>
+          We validate the theory on real captures across multiple sensing modalities. For single-photon synchronous capture we
+          use a 512&times;512 <b>SPAD512</b> camera running at 100 kHz; for asynchronous capture, a single-pixel SPAD with 68 ps timing resolution.
+          Baselines for single-photon videography are
+          <a href="https://www.dgp.toronto.edu/projects/ultra-wideband/">ultra-wideband imaging (UWB)</a>, <a href="https://wisionlab.com/project/quanta-burst-photography/">quanta burst photography (QBP)</a>, and <a href="https://lyehe.github.io/bit2bit/">bit2bit</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result 1: teaser -->
+  <section class="section result-section">
+    <div class="container is-max-desktop content">
+      <h3 class="title is-4">High-speed videography under extreme photon sparsity</h3>
+      <div class="content has-text-justified">
+        <p>
+          Two foam bullets are fired at a balloon, captured with the SPAD512. The scene is lit by ceiling lights
+          flickering at 120 Hz <i>and</i> a faint 31 kHz LED. Our method reconstructs the projectile
+          trajectories, the balloon rupture, and <b>both</b> illumination flickers simultaneously, at frame rates
+          selected after capture. We also simulate lower light levels by thinning the original photon detections
+          &mdash; the bullet trajectory and ambient flicker survive well into the photon-starved regime.
+        </p>
+      </div>
+
+      <div class="content">
+        <div class="tabs-widget">
+          <div class="tabs is-centered">
+            <ul class="is-marginless">
+              <li class="is-active"><a>1k fps</a></li>
+              <li><a>10k fps</a></li>
+              <li><a>100k fps</a></li>
+            </ul>
+          </div>
+          <div class="tabs-content has-text-centered">
+            <div style="display: none;">
+              <video controls muted preload="metadata" playsinline autoplay loop width="90%">
+                <source src="videos_moving/teaser-1k_compressed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div style="display: none;">
+              <video controls muted preload="metadata" playsinline autoplay loop width="90%">
+                <source src="videos_moving/teaser-10k_compressed.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div style="display: none;">
+              <video controls muted preload="metadata" playsinline autoplay loop width="90%">
+                <source src="videos_moving/teaser-100k_compressed.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result 2: velocity-selective -->
+  <section class="section result-section">
+    <div class="container is-max-desktop content">
+      <h3 class="title is-4">Velocity-selective videography</h3>
+      <p>
+        The velocity detector of the theory section, in action. Our method detects the velocity of linear motion
+        directly from the photon stream and generates videos focused on the selected velocity. We show
+        four objects with different motion types (diagonal, quasi-linear, horizontal, vertical) and speeds
+        ranging from the slow-moving ECCV board to the fast-moving bullets. In each panel the target object is
+        sharp while all other content is suppressed.
+      </p>
+      <div class="content">
+        <video loop muted controls preload="metadata" src="videos_moving/velocity-selective-cropped.mp4"></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result 3: comparisons -->
+  <section class="section result-section">
+    <div class="container is-max-desktop content">
+      <h3 class="title is-4">Comparisons with prior work</h3>
+      <p>
+        Each baseline fails in the way its locality assumption predicts. Select a comparison below.
+      </p>
+
+      <div class="content">
+        <div class="tabs-widget">
+          <div class="tabs is-centered compact-tabs">
+            <ul class="is-marginless">
+              <li class="is-active"><a>All methods (Blender scene)</a></li>
+              <li><a>bit2bit</a></li>
+              <li><a>QBP</a></li>
+              <li><a>UWB</a></li>
+            </ul>
+          </div>
+          <div class="tabs-content">
+            <!-- Blender -->
+            <div style="display: none;">
+              <p class="has-text-justified">
+                A blender mixing lasagna and water poured into a glass, captured with the SPAD512 under 120 Hz AC
+                illumination flicker. Only our method
+                recovers the global illumination flicker <i>and</i> the high-speed motion of the blender and
+                pouring water together.
+              </p>
+              <div class="has-text-centered">
+                <video class="extra-big-centered-video" loop muted controls preload="metadata"
+                       src="videos_moving/blender-100k-trimmed.mp4"></video>
+              </div>
+            </div>
+            <!-- bit2bit -->
+            <div style="display: none;">
+              <p class="has-text-justified">
+                bit2bit's learned smoothness prior prioritizes spatial consistency and smooths away temporal
+                variation, treating flicker as noise. On the Mandrill scene from the bit2bit dataset our method
+                recovers the CPU's flicker; on a SPAD512 capture of a static balloon lit by a 31 kHz LED,
+                reconstructed at 100k fps, ours recovers the flicker and bit2bit does not.
+              </p>
+              <div class="tabs-widget">
+                <div class="tabs is-centered compact-tabs">
+                  <ul class="is-marginless">
+                    <li class="is-active"><a>Mandrill</a></li>
+                    <li><a>Balloon, 31 kHz flicker</a></li>
+                  </ul>
+                </div>
+                <div class="tabs-content has-text-centered">
+                  <div style="display: none;">
+                    <video class="bit2bit-centered-video" loop muted controls preload="metadata"
+                           src="videos_moving/mandrill-cropped.mp4"></video>
+                  </div>
+                  <div style="display: none;">
+                    <video class="bit2bit-centered-video" loop muted controls preload="metadata"
+                           src="videos_moving/balloon-31kHz-cropped.mp4"></video>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- QBP -->
+            <div style="display: none;">
+              <p class="has-text-justified">
+                QBP aggregates photons along motion trajectories, so it needs enough detections per trajectory.
+                On the guitar dataset our method reconstructs the strings even at 20&times; lower photon counts,
+                where QBP has too few photons per trajectory to accumulate.
+              </p>
+              <div class="has-text-centered">
+                <video loop muted controls preload="metadata" src="videos_moving/QBP_comparisons.mp4"></video>
+              </div>
+            </div>
+            <!-- UWB -->
+            <div style="display: none;">
+              <p class="has-text-justified">
+                UWB estimates temporal flux variations independently at each pixel. Even in this highly periodic
+                scene &mdash; favorable to UWB &mdash; the per-pixel estimates grow noisy as photons become
+                sparser and UWB fails to recover the fan motion. Ours succeeds at 10&times; lower photon counts,
+                owing to spatiotemporal aggregation across <i>all</i> pixels.
+              </p>
+              <div class="has-text-centered">
+                <video loop muted controls preload="metadata" src="videos_moving/UWB_comparison.mp4"></video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result 4: extra flicker experiment -->
+  <section class="section result-section">
+    <div class="container is-max-desktop content">
+      <h3 class="title is-4">Recovering kHz flicker alongside motion</h3>
+      <p>
+        An additional SPAD512 capture similar to the teaser, but with a 20 kHz LED directed at the balloon. Our
+        method reconstructs at 100k fps and recovers the LED flicker while preserving finer spatial detail than
+        bit2bit, which suppresses the 20 kHz signal as noise.
+      </p>
+      <div class="content">
+        <video loop muted controls preload="metadata" src="videos_moving/bullet-20k-flicker-trimmed.mp4"></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result 5: UWB videography -->
+  <section class="section result-section">
+    <div class="container is-max-desktop content">
+      <h3 class="title is-4">Ultra-wideband videography at GHz bandwidth</h3>
+      <p>
+        The method also applies to single-pixel asynchronous SPAD sensors, recovering ultra-wideband videos with
+        GHz bandwidth &mdash; enough to resolve a propagating laser wavefront. Compared to UWB it produces
+        higher-quality reconstructions, and its performance holds at <b>30&times; lower photon counts</b>.
+      </p>
+      <div class="content">
+        <video loop muted controls preload="metadata" src="videos_moving/UWB_ICCV_comparison.mp4"></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result 6: simulated -->
+  <section class="section result-section">
+    <div class="container is-max-desktop content">
+      <h3 class="title is-4">Simulated scenes</h3>
+      <div class="content has-text-justified">
+        <p>
+          We compare against bit2bit and UWB on simulated scenes featuring diverse motions and phenomena. As the
+          light level decreases, reconstruction quality degrades for all methods, but ours degrades more
+          gracefully. Quantitative metrics are in the supplemental document.
+        </p>
+      </div>
+
+      <div class="content">
+        <div class="tabs-widget">
+          <div class="tabs is-centered compact-tabs">
+            <ul class="is-marginless">
+              <li class="is-active"><a>Coffee Beans</a></li>
+              <li><a>Fire Blast</a></li>
+              <li><a>Grass Waterfall</a></li>
+              <li><a>Step on Water</a></li>
+              <li><a>Strawberry Milk</a></li>
+              <li><a>Wine Glass</a></li>
+            </ul>
+          </div>
+          <div class="tabs-content has-text-centered">
+            <div style="display: none;">
+              <video controls muted preload="metadata" playsinline autoplay loop width="100%">
+                <source src="videos_moving/coffee-beans-cropped.mp4" type="video/mp4"></video>
+            </div>
+            <div style="display: none;">
+              <video controls muted preload="metadata" playsinline autoplay loop width="100%">
+                <source src="videos_moving/fireblast-cropped.mp4" type="video/mp4"></video>
+            </div>
+            <div style="display: none;">
+              <video controls muted preload="metadata" playsinline autoplay loop width="100%">
+                <source src="videos_moving/grass_waterfall-cropped.mp4" type="video/mp4"></video>
+            </div>
+            <div style="display: none;">
+              <video controls muted preload="metadata" playsinline autoplay loop width="100%">
+                <source src="videos_moving/men_step_water-cropped.mp4" type="video/mp4"></video>
+            </div>
+            <div style="display: none;">
+              <video controls muted preload="metadata" playsinline autoplay loop width="100%">
+                <source src="videos_moving/strawberry-cropped.mp4" type="video/mp4"></video>
+            </div>
+            <div style="display: none;">
+              <video controls muted preload="metadata" playsinline autoplay loop width="100%">
+                <source src="videos_moving/wine_glass-cropped.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- ============================ OTHER MODALITIES ============================ -->
+  <section class="section" id="modalities">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2 has-text-centered">Beyond Single-Photon Cameras</h2>
+      <div class="content has-text-justified">
+        <p>
+          Flux probing can apply to any asynchronous sensor whose
+          events encode a continuous intensity signal, as long as its image formation model and noise behavior
+          are known. <b>Spike cameras</b> fire when accumulated light crosses a threshold, so their events probe
+          the flux directly up to a scale factor. <b>Event cameras</b> fire on changes in log-intensity, so
+          probing recovers the flux's rate of change instead, which we integrate back and combine with
+          co-recorded intensity frames via Kalman filter (KF) to restore the slow content event cameras cannot see. In both cases the
+          same scan-detect-reconstruct pipeline applies, with a filtering step to suppress each sensor's
+          characteristic artifacts.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section result-section">
+    <div class="container is-max-desktop content">
+      <h3 class="title is-4">Spike camera videography</h3>
+      <p>
+        High-quality high-speed reconstruction from spike streams at quality comparable to state-of-the-art
+        deep learning method <a href="https://github.com/GitCVfb/STIR">STIR</a>, with no training.
+      </p>
+      <div class="content">
+        <div class="tabs-widget">
+          <div class="tabs is-centered compact-tabs">
+            <ul class="is-marginless">
+              <li class="is-active"><a>Car</a></li>
+              <li><a>Rotation</a></li>
+              <li><a>Water Balloon</a></li>
+            </ul>
+          </div>
+          <div class="tabs-content has-text-centered">
+            <div style="display: none;">
+              <video controls muted preload="metadata" playsinline autoplay loop width="100%">
+                <source src="videos_moving/car-spike.mp4" type="video/mp4"></video>
+            </div>
+            <div style="display: none;">
+              <video controls muted preload="metadata" playsinline autoplay loop width="100%">
+                <source src="videos_moving/rotation-spike.mp4" type="video/mp4"></video>
+            </div>
+            <div style="display: none;">
+              <video controls muted preload="metadata" playsinline autoplay loop width="100%">
+                <source src="videos_moving/balloon-spike.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section result-section">
+    <div class="container is-max-desktop content">
+      <h3 class="title is-4">Event camera videography</h3>
+      <p>
+        Applying the same probing machinery to event streams yields video reconstruction comparable to
+        state-of-the-art deep learning method <a href="https://vlislab22.github.io/EvINR/">EvINR</a>.
+      </p>
+      <div class="content">
+        <video loop muted controls preload="metadata" src="videos_moving/event.mp4"></video>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- ============================ BIBTEX ============================ -->
+  <section class="section" id="bibtex">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3">BibTeX</h2>
+      <pre><code>
+@inproceedings{yan_spatiotemporal_2026,
+    title = {Spatiotemporal {Flux} {Probing} for {Single}-{Photon} {Videography}},
+    booktitle = {Proc. {Eur}. {Conf}. on {Computer} {Vision} ({ECCV})},
+    publisher = {Springer},
+    author = {Yan, Jerry and Forlivesi, Matteo and Tan, Bowen and Xie, Andrew and Somasundaram, Siddharth and Nousias, Sotiris},
+    year = {2026},
+}
+</code></pre>
+    </div>
+  </section>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer">
+    <div class="container is-max-desktop content has-text-centered">
+      <!-- TODO: fill in funding sources / acknowledgments -->
+      <p class="is-size-7">
+        Website template adapted from
+        <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+      </p>
+    </div>
+  </footer>
+
+</body></html>
