@@ -6,7 +6,7 @@
 
   {% if post.image %}
     <div class="pub-item__image">
-      <a href="{{ base_path }}{{ post.url }}">
+      <a href="{% if post.link %}{{ post.link }}{% else %}{{ base_path }}{{ post.url }}{% endif %}">
         <img src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ post.image | prepend: base_path }}{% endif %}" alt="{{ title | strip_html }}">
       </a>
     </div>
@@ -15,7 +15,7 @@
   <div class="pub-item__body">
     <h2 class="pub-item__title" itemprop="headline">
       {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        <a href="{{ post.link }}">{{ title }}</a>
       {% else %}
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
       {% endif %}

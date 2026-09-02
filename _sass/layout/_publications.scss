@@ -158,6 +158,24 @@ $pub-highlight-bg: rgba(248, 148, 6, 0.14);
   }
 }
 
+.pub-single__link {
+  margin: 0.75em 0 0;
+}
+
+/* Project-website button: filled accent so it stands out from the paper/code
+   buttons, with fixed colors that read on both the light and dark themes. */
+.btn--project {
+  color: #fff !important;
+  background-color: #2f7f93;
+  font-size: $type-size-5;
+  padding: 0.6em 1.2em;
+
+  &:hover {
+    color: #fff !important;
+    background-color: #26697a;
+  }
+}
+
 .pub-single__image {
   float: left;
   width: $pub-image-width;
