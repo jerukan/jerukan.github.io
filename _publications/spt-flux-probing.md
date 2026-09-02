@@ -10,7 +10,7 @@ permalink: /publications/spt-flux-probing-cite
 excerpt: "Recovery of high-speed videos from dynamic scenes under extreme photon sparsity."
 date: 2026-09-08
 venue: 'ECCV'
-image: null
+image: '/images/sptfluxprobe_gamma_select.gif'
 paperurl: null
 highlight: true
 bibtexurl: '/files/bibtex/bibtex-2026-sptfluxprobing.bib'
