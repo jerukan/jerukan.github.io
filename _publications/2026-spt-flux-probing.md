@@ -11,7 +11,7 @@ excerpt: "Recovery of high-speed videos from dynamic scenes under extreme photon
 date: 2026-09-08
 venue: 'ECCV'
 image: '/images/sptfluxprobe_gamma_select.gif'
-paperurl: null
+paperurl: 'https://arxiv.org/pdf/2609.22479'
 highlight: true
 bibtexurl: '/files/bibtex/bibtex-2026-sptfluxprobing.bib'
 asterisk_authors:
