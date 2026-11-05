@@ -8,7 +8,7 @@ date: 2026-09-01
 venue: 'ISPRS Journal of Photogrammetry and Remote Sensing + MS Thesis'
 paperurl: 'https://www.sciencedirect.com/science/article/pii/S0924271626003382'
 codeurl: 'https://github.com/jerukan/PoseIDON'
-image: '/images/fit-overlays-barrelddt1.gif'
+image: '/media/fit-overlays-barrelddt1.mp4'
 highlight: true
 bibtexurl: '/files/bibtex/bibtex-2025-poseidon.bib'
 ---

@@ -53,7 +53,12 @@ layout: default
 
       <section class="page__content" itemprop="text">
         {% if page.collection == 'publications' and page.image %}
-          <img class="pub-single__image" src="{% if page.image contains '://' %}{{ page.image }}{% else %}{{ page.image | prepend: base_path }}{% endif %}" alt="{{ page.title | strip_html }}">
+          {% capture pub_src %}{% if page.image contains '://' %}{{ page.image }}{% else %}{{ page.image | prepend: base_path }}{% endif %}{% endcapture %}
+          {% if page.image contains '.mp4' %}
+            <video class="pub-single__image" src="{{ pub_src }}" autoplay loop muted playsinline aria-label="{{ page.title | strip_html }}"></video>
+          {% else %}
+            <img class="pub-single__image" src="{{ pub_src }}" alt="{{ page.title | strip_html }}">
+          {% endif %}
         {% endif %}
 
         {{ content }}
